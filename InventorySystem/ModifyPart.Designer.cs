@@ -57,6 +57,7 @@
             this.modiPartCancelButton.TabIndex = 37;
             this.modiPartCancelButton.Text = "Cancel";
             this.modiPartCancelButton.UseVisualStyleBackColor = true;
+            this.modiPartCancelButton.Click += new System.EventHandler(this.modiPartCancelButton_Click);
             // 
             // modiPartSaveButton
             // 
@@ -112,10 +113,13 @@
             // 
             // modiPartTxtBoxid
             // 
+            this.modiPartTxtBoxid.Enabled = false;
             this.modiPartTxtBoxid.Location = new System.Drawing.Point(282, 119);
             this.modiPartTxtBoxid.Name = "modiPartTxtBoxid";
+            this.modiPartTxtBoxid.ReadOnly = true;
             this.modiPartTxtBoxid.Size = new System.Drawing.Size(259, 26);
             this.modiPartTxtBoxid.TabIndex = 29;
+            this.modiPartTxtBoxid.UseWaitCursor = true;
             // 
             // modiPartLabelMachid
             // 

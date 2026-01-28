@@ -88,7 +88,33 @@ namespace InventorySystem
 
         private void addProductsSaveButton_Click(object sender, EventArgs e)
         {
-
+            if (!int.TryParse(addProductsTxtBoxInventory.Text, out int inv) ||
+                !decimal.TryParse(addProductsTxtBoxPriCos.Text, out decimal price) ||
+                !int.TryParse(addProductsTxtBoxMax.Text, out int max) ||
+                !int.TryParse(addProductsTxtBoxMin.Text, out int min))
+            {
+                MessageBox.Show("Ensure Items in inventory, Price, and inventory Max and Min are numeric values.");
+                return;
+            }
+            if (min>max)
+            {
+                MessageBox.Show("Min cannot be greater than Max");
+                return;
+            }
+            if (inv < min || inv > max)
+            {
+                MessageBox.Show("Inventory must be between Min and Max Items");
+                return;
+            }
+            tempProduct.ProductID = int.Parse(addProductsTxtBoxInventory.Text);
+            tempProduct.Name = addProductsTxtBoxName.Text;
+            tempProduct.InStock = inv;
+            tempProduct.Price = price;
+            tempProduct.Max = max;
+            tempProduct.Min = min;
+            //Save to inventory
+            Inventory.AddProduct(tempProduct);
+            this.Close();
         }
 
         private void addProductsCancelButton_Click(object sender, EventArgs e)

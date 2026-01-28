@@ -95,5 +95,12 @@ namespace InventorySystem
         {
             modiPartLabelMachid.Text = "Company Name";
         }
+
+        private void modiPartCancelButton_Click(object sender, EventArgs e)
+        {
+            // Close form ModifyParts
+            //return to main without update
+            this.Close();
+        }
     }
 }

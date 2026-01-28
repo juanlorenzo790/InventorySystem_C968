@@ -297,6 +297,7 @@
             this.Controls.Add(this.addProductsLabel);
             this.Name = "addProductWindow";
             this.Text = "Product";
+            this.Click += new System.EventHandler(this.addProductsSaveButton_Click);
             ((System.ComponentModel.ISupportInitialize)(this.addProductsCandDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addProductsAssoDataGrid)).EndInit();
             this.ResumeLayout(false);
